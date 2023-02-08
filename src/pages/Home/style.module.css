@@ -1,0 +1,10 @@
+.containerSeries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .boxSeries {
+  width: 500px;
+  height: 500px;
+} */
