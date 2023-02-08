@@ -24,21 +24,21 @@ export function Navbar() {
           <nav aria-label="Site Nav" class="hidden md:block">
             <ul class="flex items-center gap-6 text-sm">
               <li>
-                <a
+                <Link
                   class="text-gray-500 transition hover:text-violet-600"
-                  href="/"
+                  to="/category/movie/"
                 >
                   Filmes
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
+                <Link
                   class="text-gray-500 transition hover:text-violet-600"
-                  href="/"
+                  to="/category/tv/"
                 >
                   Séries
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
