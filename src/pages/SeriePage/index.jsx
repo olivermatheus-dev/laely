@@ -10,9 +10,9 @@ export function SeriePage() {
   useEffect(() => {
     async function fetchSerie() {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/tv/${params.id}?api_key=9b0bf59083345bf6f6a1b1a347761971`
+        `https://api.themoviedb.org/3/tv/${params.id}?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
       );
-
+      console.log(res.data.result);
       setSerie(res.data);
     }
 

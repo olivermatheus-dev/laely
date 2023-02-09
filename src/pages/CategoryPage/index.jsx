@@ -13,9 +13,9 @@ export function CategoryPage() {
   useEffect(() => {
     async function fetchContent() {
       const response = await axios.get(
-        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971`
+        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
       );
-      console.log(response);
+      console.log(response.data.results);
       setSeries(response.data.results);
     }
 

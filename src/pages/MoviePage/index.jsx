@@ -9,7 +9,7 @@ export function MoviePage() {
   useEffect(() => {
     async function fetchMovie() {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${params.id}?api_key=9b0bf59083345bf6f6a1b1a347761971`
+        `https://api.themoviedb.org/3/movie/${params.id}?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
       );
 
       setMovie(res.data);
