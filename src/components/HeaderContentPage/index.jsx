@@ -17,7 +17,7 @@ export function HeaderContentPage({ movie }) {
             <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
               {movie.original_title}
             </h1>
-            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-gray-500">
+            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-violet-800">
               {movie.genres[0].name} / {movie.genres[1].name} /{" "}
               {movie.genres[2].name}
             </p>

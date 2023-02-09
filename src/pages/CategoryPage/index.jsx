@@ -44,15 +44,7 @@ export function CategoryPage() {
         <div className="bg-zinc-800 ">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
-              return (
-                <BoxMovie movie={currentElement} />
-                // <BoxMovie
-                //   id={currentElement.id}
-                //   backdrop_path={currentElement.backdrop_path}
-                //   original_title={currentElement.original_title}
-                //   vote_average={currentElement.vote_average}
-                // />
-              );
+              return <BoxMovie movie={currentElement} />;
             })}
           </div>
         </div>
