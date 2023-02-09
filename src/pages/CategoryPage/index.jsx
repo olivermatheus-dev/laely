@@ -45,12 +45,13 @@ export function CategoryPage() {
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
               return (
-                <BoxMovie
-                  id={currentElement.id}
-                  backdrop_path={currentElement.backdrop_path}
-                  original_title={currentElement.original_title}
-                  vote_average={currentElement.vote_average}
-                />
+                <BoxMovie movie={currentElement} />
+                // <BoxMovie
+                //   id={currentElement.id}
+                //   backdrop_path={currentElement.backdrop_path}
+                //   original_title={currentElement.original_title}
+                //   vote_average={currentElement.vote_average}
+                // />
               );
             })}
           </div>

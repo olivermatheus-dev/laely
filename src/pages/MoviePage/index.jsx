@@ -15,17 +15,13 @@ export function MoviePage() {
 
       setMovie(res.data);
     }
-
+    console.log(movie);
     fetchMovie();
   }, []);
 
   return (
     <>
-      <HeaderContentPage
-        backdrop_path={movie.backdrop_path}
-        original_title={movie.original_title}
-        overview={movie.overview}
-      />
+      <HeaderContentPage movie={movie} />
     </>
   );
 }
