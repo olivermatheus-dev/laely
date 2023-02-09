@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { HeaderContentPage } from "../../components/HeaderContentPage";
 
 export function MoviePage() {
   const params = useParams();
@@ -20,11 +21,10 @@ export function MoviePage() {
 
   return (
     <>
-      <h1>{movie.original_title}</h1>
-      <p>{movie.overview}</p>
-      <img
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-        alt="Poster do filme"
+      <HeaderContentPage
+        backdrop_path={movie.backdrop_path}
+        original_title={movie.original_title}
+        overview={movie.overview}
       />
     </>
   );

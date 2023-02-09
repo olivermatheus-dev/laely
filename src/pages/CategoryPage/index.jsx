@@ -25,31 +25,35 @@ export function CategoryPage() {
   return (
     <>
       {params.category === "tv" && (
-        <div className={style.containerSeries}>
-          {series.map((currentElement) => {
-            return (
-              <BoxSerie
-                id={currentElement.id}
-                backdrop_path={currentElement.backdrop_path}
-                name={currentElement.name}
-                vote_average={currentElement.vote_average}
-              />
-            );
-          })}
+        <div className="bg-zinc-800 ">
+          <div className={style.containerSeries}>
+            {series.map((currentElement) => {
+              return (
+                <BoxSerie
+                  id={currentElement.id}
+                  backdrop_path={currentElement.backdrop_path}
+                  name={currentElement.name}
+                  vote_average={currentElement.vote_average}
+                />
+              );
+            })}
+          </div>
         </div>
       )}
       {params.category === "movie" && (
-        <div className={style.containerSeries}>
-          {series.map((currentElement) => {
-            return (
-              <BoxMovie
-                id={currentElement.id}
-                backdrop_path={currentElement.backdrop_path}
-                original_title={currentElement.original_title}
-                vote_average={currentElement.vote_average}
-              />
-            );
-          })}
+        <div className="bg-zinc-800 ">
+          <div className={style.containerSeries}>
+            {series.map((currentElement) => {
+              return (
+                <BoxMovie
+                  id={currentElement.id}
+                  backdrop_path={currentElement.backdrop_path}
+                  original_title={currentElement.original_title}
+                  vote_average={currentElement.vote_average}
+                />
+              );
+            })}
+          </div>
         </div>
       )}
     </>

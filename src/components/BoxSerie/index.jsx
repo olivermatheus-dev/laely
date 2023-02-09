@@ -4,12 +4,12 @@ export function BoxSerie({ id, backdrop_path, name, vote_average }) {
   return (
     <Link
       to={`/tv/${id}`}
-      className="group relative block bg-black w-96 h-4/5 m-2"
+      className="group relative block bg-black w-96 h-4/5 m-2 "
     >
       <img
         alt="Developer"
         src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
-        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
       />
 
       <div className="relative pt-8 pl-8">
