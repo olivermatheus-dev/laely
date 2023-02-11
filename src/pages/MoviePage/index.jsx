@@ -15,7 +15,6 @@ export function MoviePage() {
 
       setMovie(res.data);
     }
-    console.log(movie);
     fetchMovie();
   }, []);
 

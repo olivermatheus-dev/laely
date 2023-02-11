@@ -9,13 +9,11 @@ export function CategoryPage() {
   const [series, setSeries] = useState([]);
 
   const params = useParams();
-  console.log(params);
   useEffect(() => {
     async function fetchContent() {
       const response = await axios.get(
         ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
       );
-      console.log(response.data.results);
       setSeries(response.data.results);
     }
 
@@ -30,6 +28,7 @@ export function CategoryPage() {
             {series.map((currentElement) => {
               return (
                 <BoxSerie
+                  key={currentElement.id}
                   id={currentElement.id}
                   backdrop_path={currentElement.backdrop_path}
                   name={currentElement.name}
@@ -44,7 +43,9 @@ export function CategoryPage() {
         <div className="bg-zinc-800 ">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
-              return <BoxMovie movie={currentElement} />;
+              return (
+                <BoxMovie movie={currentElement} key={currentElement.id} />
+              );
             })}
           </div>
         </div>
