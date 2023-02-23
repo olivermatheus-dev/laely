@@ -4,26 +4,30 @@ import style from "./style.module.css";
 import { useParams } from "react-router-dom";
 import { BoxMovie } from "../../components/BoxMovie";
 import { BoxSerie } from "../../components/BoxSerie";
+import { Pagination } from "../../components/Pagination";
+import useLanguage from "../../components/Zustand/useLanguage";
 
 export function CategoryPage() {
   const [series, setSeries] = useState([]);
-
   const params = useParams();
+
+  const languageSelect = useLanguage((state) => state.language);
+
   useEffect(() => {
     async function fetchContent() {
       const response = await axios.get(
-        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
+        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=${languageSelect}&page=${params.page}`
       );
       setSeries(response.data.results);
     }
 
     fetchContent();
-  }, [params]);
+  }, [params, languageSelect]);
 
   return (
     <>
       {params.category === "tv" && (
-        <div className="bg-zinc-800 ">
+        <div className=" ">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
               return (
@@ -40,7 +44,7 @@ export function CategoryPage() {
         </div>
       )}
       {params.category === "movie" && (
-        <div className="bg-zinc-800 ">
+        <div className="">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
               return (
@@ -48,6 +52,7 @@ export function CategoryPage() {
               );
             })}
           </div>
+          <Pagination atualPage={params.page} category={params.category} />
         </div>
       )}
     </>
