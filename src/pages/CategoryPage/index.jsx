@@ -4,32 +4,35 @@ import style from "./style.module.css";
 import { useParams } from "react-router-dom";
 import { BoxMovie } from "../../components/BoxMovie";
 import { BoxSerie } from "../../components/BoxSerie";
+import { Pagination } from "../../components/Pagination";
+import useLanguage from "../../components/Zustand/useLanguage";
 
 export function CategoryPage() {
   const [series, setSeries] = useState([]);
-
   const params = useParams();
-  console.log(params);
+
+  const languageSelect = useLanguage((state) => state.language);
+
   useEffect(() => {
     async function fetchContent() {
       const response = await axios.get(
-        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=pt-BR`
+        ` https://api.themoviedb.org/3/${params.category}/popular?api_key=9b0bf59083345bf6f6a1b1a347761971&language=${languageSelect}&page=${params.page}`
       );
-      console.log(response.data.results);
       setSeries(response.data.results);
     }
 
     fetchContent();
-  }, [params]);
+  }, [params, languageSelect]);
 
   return (
     <>
       {params.category === "tv" && (
-        <div className="bg-zinc-800 ">
+        <div className=" ">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
               return (
                 <BoxSerie
+                  key={currentElement.id}
                   id={currentElement.id}
                   backdrop_path={currentElement.backdrop_path}
                   name={currentElement.name}
@@ -41,12 +44,15 @@ export function CategoryPage() {
         </div>
       )}
       {params.category === "movie" && (
-        <div className="bg-zinc-800 ">
+        <div className="">
           <div className={style.containerSeries}>
             {series.map((currentElement) => {
-              return <BoxMovie movie={currentElement} />;
+              return (
+                <BoxMovie movie={currentElement} key={currentElement.id} />
+              );
             })}
           </div>
+          <Pagination atualPage={params.page} category={params.category} />
         </div>
       )}
     </>

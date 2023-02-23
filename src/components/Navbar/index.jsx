@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
-
+import useLanguage from "../Zustand/useLanguage";
 export function Navbar() {
+  const languageSelect = useLanguage((state) => state.language);
+  const changeEnglish = useLanguage((state) => state.english);
+  const changePortuguese = useLanguage((state) => state.portuguese);
+  const changeSpanish = useLanguage((state) => state.spanish);
+
   return (
     <header aria-label="Site Header" className="bg-zinc-900">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
@@ -26,7 +31,7 @@ export function Navbar() {
               <li>
                 <Link
                   className="text-gray-500 transition hover:text-violet-600"
-                  to="/category/movie/"
+                  to="/category/movie/1"
                 >
                   Filmes
                 </Link>
@@ -35,10 +40,40 @@ export function Navbar() {
               <li>
                 <Link
                   className="text-gray-500 transition hover:text-violet-600"
-                  to="/category/tv/"
+                  to="/category/tv/1"
                 >
                   Séries
                 </Link>
+              </li>
+              <li>
+                <button
+                  className="text-gray-500 transition hover:text-violet-600"
+                  onClick={() => {
+                    changeEnglish();
+                  }}
+                >
+                  EN
+                </button>
+              </li>
+              <li>
+                <button
+                  className="text-gray-500 transition hover:text-violet-600"
+                  onClick={() => {
+                    changePortuguese();
+                  }}
+                >
+                  PT
+                </button>
+              </li>
+              <li>
+                <button
+                  className="text-gray-500 transition hover:text-violet-600"
+                  onClick={() => {
+                    changeSpanish();
+                  }}
+                >
+                  ES
+                </button>
               </li>
             </ul>
           </nav>
@@ -68,11 +103,11 @@ export function Navbar() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>

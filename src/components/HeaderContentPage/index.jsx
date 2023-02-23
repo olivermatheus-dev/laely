@@ -1,4 +1,6 @@
-export function HeaderContentPage({ movie }) {
+import { SimilarMoviesCard } from "../SimilarMoviesCard";
+
+export function HeaderContentPage({ movie, similarMovies }) {
   return (
     <div>
       <section
@@ -15,12 +17,12 @@ export function HeaderContentPage({ movie }) {
               Nota: {movie.vote_average}
             </p>
             <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
-              {movie.original_title}
+              {movie.title}
             </h1>
-            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-violet-800">
+            {/* <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-violet-800">
               {movie.genres[0].name} / {movie.genres[1].name} /{" "}
               {movie.genres[2].name}
-            </p>
+            </p> */}
             <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">
               {movie.overview}
             </p>
@@ -29,6 +31,11 @@ export function HeaderContentPage({ movie }) {
           </div>
         </div>
       </section>
+      <div className="flex justify-center gap-8 mt-4 flex-wrap sm:text-xl sm:leading-relaxed text-white">
+        {similarMovies.map((movie) => {
+          return <SimilarMoviesCard movie={movie} />;
+        })}
+      </div>
     </div>
   );
 }
