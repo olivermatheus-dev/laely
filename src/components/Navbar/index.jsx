@@ -6,6 +6,23 @@ export function Navbar() {
   const changePortuguese = useLanguage((state) => state.portuguese);
   const changeSpanish = useLanguage((state) => state.spanish);
 
+  let translateMovies;
+
+  switch (languageSelect) {
+    case "pt-BR":
+      translateMovies = "Filmes";
+      break;
+    case "es":
+      translateMovies = "Peliculas";
+      break;
+    case "en-US":
+      translateMovies = "Movies";
+      break;
+    default:
+      translateMovies = "Filmes";
+      break;
+  }
+
   return (
     <header aria-label="Site Header" className="bg-zinc-900">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
@@ -33,18 +50,18 @@ export function Navbar() {
                   className="text-gray-500 transition hover:text-violet-600"
                   to="/category/movie/1"
                 >
-                  Filmes
+                  {translateMovies}
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
                   className="text-gray-500 transition hover:text-violet-600"
                   to="/category/tv/1"
                 >
                   Séries
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <button
                   className="text-gray-500 transition hover:text-violet-600"

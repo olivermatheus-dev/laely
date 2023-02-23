@@ -15,14 +15,14 @@ export function SimilarMoviesCard({ movie }) {
         <div className="sm:pt-18 pt-12 text-white lg:pt-24">
           <h3 className="text-xl font-bold sm:text-2xl">{movie.title}</h3>
 
-          <p className="text-sm">Italy</p>
+          <p className="text-sm"></p>
         </div>
 
         <span className="inline-flex items-center gap-0.5 rounded-full bg-black px-2 py-1 text-xs font-semibold text-white">
-          4.5
+          {Number(movie.vote_average).toFixed(1)}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-yellow-300"
+            className="h-4 w-4 text-violet-700"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
