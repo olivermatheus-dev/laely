@@ -53,8 +53,8 @@ export function Navbar() {
           <p>Laely</p>
         </Link>
 
-        <div className="flex flex-1 items-center justify-end md:justify-between">
-          <nav aria-label="Site Nav" className="hidden md:block">
+        <div className="flex flex-1 items-center justify-between">
+          <nav aria-label="Site Nav" className="block">
             <ul className="flex items-center gap-6 text-sm">
               <li>
                 <Link
@@ -139,7 +139,7 @@ export function Navbar() {
               </a>
             </div> */}
             <SearchBar />
-            <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+            {/* <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
               <span className="sr-only">Toggle menu</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +155,7 @@ export function Navbar() {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

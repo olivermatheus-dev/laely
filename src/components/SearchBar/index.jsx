@@ -36,7 +36,7 @@ export function SearchBar() {
         ></motion.div>
       )}
 
-      <div className="flex flex-col fixed right-40 top-1 w-60 z-10">
+      <div className="flex flex-col fixed right-10 sm:right-40 top-1 w-60 z-10">
         <div className="w-60 absolute">
           <label
             HTMLfor="searchBar"
