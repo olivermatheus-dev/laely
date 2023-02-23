@@ -1,7 +1,6 @@
 import { SimilarMoviesCard } from "../SimilarMoviesCard";
 
 export function HeaderContentPage({ movie, similarMovies }) {
-  console.log(movie);
   return (
     <div>
       <section
@@ -34,7 +33,7 @@ export function HeaderContentPage({ movie, similarMovies }) {
       </section>
       <div className="flex justify-center gap-8 mt-4 flex-wrap sm:text-xl sm:leading-relaxed text-white p-10 ">
         {similarMovies.map((movie) => {
-          return <SimilarMoviesCard movie={movie} />;
+          return <SimilarMoviesCard movie={movie} key={movie.id} />;
         })}
       </div>
     </div>

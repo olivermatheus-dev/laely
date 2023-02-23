@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
 
 export function BoxMovie({ movie }) {
-  const language = useLanguage((state) => state.language);
+  const languageSelect = useLanguage((state) => state.language);
 
   let translateMovie;
 
-  switch (language) {
+  switch (languageSelect) {
     case "pt-BR":
       translateMovie = "filme";
       break;

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export function Pagination({ atualPage, category }) {
   //   let prevPage;
@@ -12,9 +12,9 @@ export function Pagination({ atualPage, category }) {
   //   function handlePageUp() {
   //     return (nextPage = atualPage + 1);
   //   }
-
+  const params = useParams();
   return (
-    <div className="flex flex-col items-center mt-5">
+    <div className="flex flex-col items-center mt-5 pb-8">
       {/* <span className="text-sm text-gray-700 dark:text-gray-400">
         Showing{" "}
         <span className="font-semibold text-gray-900 dark:text-white">1</span> to{" "}
@@ -24,8 +24,8 @@ export function Pagination({ atualPage, category }) {
       </span> */}
       <div className="inline-flex mt-2 xs:mt-0">
         <Link
-          to={`/category/${category}/${
-            atualPage > 1 ? +atualPage - 1 : atualPage
+          to={`/${params.category}/${params.selection}/${
+            +params.page > 1 ? +params.page - 1 : +params.page
           }`}
         >
           <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-violet-800 hover:text-violet-800 border-0 border-l border-gray-700 rounded-l hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-all">
@@ -45,7 +45,9 @@ export function Pagination({ atualPage, category }) {
             Prev
           </button>
         </Link>
-        <Link to={`/category/${category}/${+atualPage + 1}`}>
+        <Link
+          to={`/${params.category}/${params.selection}/${+params.page + 1}`}
+        >
           <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-violet-800 hover:text-violet-800 border-0 border-l border-gray-700 rounded-r hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-all">
             Next
             <svg

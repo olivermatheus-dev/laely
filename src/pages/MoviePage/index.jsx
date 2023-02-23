@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HeaderContentPage } from "../../components/HeaderContentPage";
 import useLanguage from "../../components/Zustand/useLanguage";
+import { LoadingScreen } from "../../components/LoadingScreen";
+import { motion } from "framer-motion";
 
 export function MoviePage() {
   const params = useParams();
@@ -38,8 +40,16 @@ export function MoviePage() {
   return (
     <>
       {isLoading && (
-        <HeaderContentPage movie={movie} similarMovies={similarMovies} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="bg-zinc-800"
+        >
+          <HeaderContentPage movie={movie} similarMovies={similarMovies} />
+        </motion.div>
       )}
+      {!isLoading && <LoadingScreen />}
     </>
   );
 }

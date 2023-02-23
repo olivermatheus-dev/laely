@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:category/:page" element={<CategoryPage />} />
+        <Route path="/:category/:selection/:page" element={<CategoryPage />} />
         <Route path="/tv/:id" element={<SeriePage />} />
         <Route path="/movie/:id" element={<MoviePage />} />
       </Routes>

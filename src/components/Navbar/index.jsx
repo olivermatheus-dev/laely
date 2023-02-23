@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
 export function Navbar() {
   const languageSelect = useLanguage((state) => state.language);
@@ -7,19 +7,29 @@ export function Navbar() {
   const changeSpanish = useLanguage((state) => state.spanish);
 
   let translateMovies;
+  let translateTopRated;
+  let nowPlaying;
 
   switch (languageSelect) {
     case "pt-BR":
       translateMovies = "Filmes";
+      translateTopRated = "Melhores";
+      nowPlaying = "Lançamentos";
       break;
     case "es":
       translateMovies = "Peliculas";
+      translateTopRated = "Mejores ";
+      nowPlaying = "Lanzamientos";
       break;
     case "en-US":
       translateMovies = "Movies";
+      translateTopRated = "Top Rated ";
+      nowPlaying = "Releases";
       break;
     default:
       translateMovies = "Filmes";
+      translateTopRated = "Melhores";
+      nowPlaying = "Em cartaz";
       break;
   }
 
@@ -48,9 +58,25 @@ export function Navbar() {
               <li>
                 <Link
                   className="text-gray-500 transition hover:text-violet-600"
-                  to="/category/movie/1"
+                  to="/movie/popular/1"
                 >
                   {translateMovies}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-500 transition hover:text-violet-600"
+                  to="/movie/top_rated/1"
+                >
+                  {translateTopRated}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-500 transition hover:text-violet-600"
+                  to="/movie/now_playing/1"
+                >
+                  {nowPlaying}
                 </Link>
               </li>
 
@@ -63,14 +89,14 @@ export function Navbar() {
                 </Link>
               </li> */}
               <li>
-                <button
+                <NavLink
                   className="text-gray-500 transition hover:text-violet-600"
                   onClick={() => {
                     changeEnglish();
                   }}
                 >
                   EN
-                </button>
+                </NavLink>
               </li>
               <li>
                 <button
