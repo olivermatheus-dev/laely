@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   return (
     <div className="bg-zinc-800">
-      <Navbar />
+      <Navbar className="" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category/:selection/:page" element={<CategoryPage />} />

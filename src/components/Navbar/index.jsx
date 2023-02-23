@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
+import { SearchBar } from "../SearchBar";
 export function Navbar() {
   const languageSelect = useLanguage((state) => state.language);
   const changeEnglish = useLanguage((state) => state.english);
@@ -34,7 +35,7 @@ export function Navbar() {
   }
 
   return (
-    <header aria-label="Site Header" className="bg-zinc-900">
+    <header aria-label="Site Header" className="bg-zinc-900 fixed z-10 w-full">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
         <Link className="block text-violet-600 font-extrabold" to="/">
           <span className="sr-only">Home</span>
@@ -137,7 +138,7 @@ export function Navbar() {
                 Register
               </a>
             </div> */}
-
+            <SearchBar />
             <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
               <span className="sr-only">Toggle menu</span>
               <svg

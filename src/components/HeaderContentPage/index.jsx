@@ -1,6 +1,7 @@
 import { SimilarMoviesCard } from "../SimilarMoviesCard";
 
 export function HeaderContentPage({ movie, similarMovies }) {
+  console.log(movie);
   return (
     <div>
       <section
@@ -19,10 +20,19 @@ export function HeaderContentPage({ movie, similarMovies }) {
             <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
               {movie.title}
             </h1>
-            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-violet-800">
-              {movie.genres[0].name} / {movie.genres[1].name} /{" "}
-              {movie.genres[2].name}
-            </p>
+            <div className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-violet-800 flex gap-4">
+              {movie.genres[0] && movie.genres[0].name && (
+                <p> {movie.genres[0].name}</p>
+              )}{" "}
+              /
+              {movie.genres[1] && movie.genres[1].name && (
+                <p> {movie.genres[1].name}</p>
+              )}{" "}
+              /
+              {movie.genres[2] && movie.genres[2].name && (
+                <p> {movie.genres[2].name}</p>
+              )}
+            </div>
             <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">
               {movie.overview}
             </p>
