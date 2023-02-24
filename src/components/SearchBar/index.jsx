@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
 import { ModalSearch } from "../ModalSearch";
 import { motion } from "framer-motion";
+import { Menu, Transition } from "@headlessui/react";
 
 export function SearchBar() {
   const [search, setSearch] = useState("");
@@ -36,16 +37,16 @@ export function SearchBar() {
         ></motion.div>
       )}
 
-      <div className="flex flex-col fixed right-10 sm:right-40 top-1 w-60 z-10">
-        <div className="w-60 absolute">
+      <div className="flex flex-col fixed  mx-auto right-28 sm:right-40 md:right-96 top-1 w-36 sm:w-60 z-10">
+        <div className="w-36 sm:w-44 absolute">
           <label
             HTMLfor="searchBar"
             className="relative block overflow-hidden border-b border-gray-200 pt-3 focus-within:border-violet-600"
           >
             <input
-              type="email"
+              type="searchBar"
               id="searchBar"
-              placeholder="Email"
+              placeholder="searchBar"
               className="text-slate-100 peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               onChange={(e) => setSearch(e.target.value.replaceAll(" ", "%20"))}
             />

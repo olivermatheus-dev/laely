@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
 import { SearchBar } from "../SearchBar";
+import DropDownButton from "../Buttons/DropDownButton";
+import MenuToggle from "../SideMenu/MenuToggle";
 export function Navbar() {
   const languageSelect = useLanguage((state) => state.language);
   const changeEnglish = useLanguage((state) => state.english);
@@ -58,7 +60,7 @@ export function Navbar() {
             <ul className="flex items-center gap-6 text-sm">
               <li>
                 <Link
-                  className="text-gray-500 transition hover:text-violet-600"
+                  className="text-gray-500 transition hover:text-violet-600 hidden sm:block"
                   to="/movie/popular/1"
                 >
                   {translateMovies}
@@ -66,7 +68,7 @@ export function Navbar() {
               </li>
               <li>
                 <Link
-                  className="text-gray-500 transition hover:text-violet-600"
+                  className="text-gray-500 transition hover:text-violet-600 hidden sm:block"
                   to="/movie/top_rated/1"
                 >
                   {translateTopRated}
@@ -74,7 +76,7 @@ export function Navbar() {
               </li>
               <li>
                 <Link
-                  className="text-gray-500 transition hover:text-violet-600"
+                  className="text-gray-500 transition hover:text-violet-600 hidden sm:block"
                   to="/movie/now_playing/1"
                 >
                   {nowPlaying}
@@ -89,73 +91,43 @@ export function Navbar() {
                   Séries
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <NavLink
-                  className="text-gray-500 transition hover:text-violet-600"
-                  onClick={() => {
-                    changeEnglish();
-                  }}
+                className="text-gray-500 transition hover:text-violet-600"
+                onClick={() => {
+                  changeEnglish();
+                }}
                 >
-                  EN
+                EN
                 </NavLink>
-              </li>
-              <li>
+                </li>
+                <li>
                 <button
-                  className="text-gray-500 transition hover:text-violet-600"
-                  onClick={() => {
-                    changePortuguese();
-                  }}
+                className="text-gray-500 transition hover:text-violet-600"
+                onClick={() => {
+                  changePortuguese();
+                }}
                 >
                   PT
                 </button>
-              </li>
-              <li>
+                </li>
+                <li>
                 <button
                   className="text-gray-500 transition hover:text-violet-600"
                   onClick={() => {
                     changeSpanish();
                   }}
-                >
+                  >
                   ES
-                </button>
-              </li>
+                  </button>
+                </li> */}
             </ul>
           </nav>
 
-          <div className="flex items-center gap-4">
-            {/* <div className="sm:flex sm:gap-4">
-              <a
-                className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                href="/"
-              >
-                Login
-              </a>
-
-              <a
-                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                href="/"
-              >
-                Register
-              </a>
-            </div> */}
+          <div className="flex  items-center gap-4">
             <SearchBar />
-            {/* <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button> */}
+            <DropDownButton />
+            <MenuToggle />
           </div>
         </div>
       </div>
