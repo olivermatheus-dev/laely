@@ -93,7 +93,6 @@ export default function MenuToggle() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to="/movie/now_playing/1"
                   className={classNames(
                     active ? "" : "text-violet-600",
                     "block px-4 py-1 text-xs font-semibold"
@@ -145,7 +144,6 @@ export default function MenuToggle() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to="/movie/now_playing/1"
                   className={classNames(
                     active ? "" : "text-violet-600",
                     "block px-4 py-1 text-xs font-semibold"
@@ -158,7 +156,6 @@ export default function MenuToggle() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to="/movie/now_playing/1"
                   onClick={changePortuguese}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-500",
@@ -172,7 +169,6 @@ export default function MenuToggle() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to="/movie/now_playing/1"
                   onClick={changeEnglish}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-500",
@@ -186,7 +182,6 @@ export default function MenuToggle() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to="/movie/now_playing/1"
                   onClick={changeSpanish}
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-500",
