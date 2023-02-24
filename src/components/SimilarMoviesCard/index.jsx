@@ -4,7 +4,7 @@ export function SimilarMoviesCard({ movie }) {
   return (
     <Link
       to={`/movie/${movie.id}`}
-      className="w-96 block relative overflow-hidden rounded-xl  bg-cover bg-center bg-no-repeat  transition duration-300 shadow-lg hover:scale-105 hover:shadow-violet-900"
+      className="w-full sm:w-96 block relative overflow-hidden rounded-xl  bg-cover bg-center bg-no-repeat  transition duration-300 shadow-lg hover:scale-105 hover:shadow-violet-900"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
       }}
