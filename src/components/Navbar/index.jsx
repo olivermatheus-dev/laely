@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import useLanguage from "../Zustand/useLanguage";
 import { SearchBar } from "../SearchBar";
 import DropDownButton from "../Buttons/DropDownButton";
-import MenuToggle from "../SideMenu/MenuToggle";
+import { MenuToggle } from "../SideMenu/MenuToggle";
+
 export function Navbar() {
   const languageSelect = useLanguage((state) => state.language);
   const changeEnglish = useLanguage((state) => state.english);
@@ -82,45 +83,6 @@ export function Navbar() {
                   {nowPlaying}
                 </Link>
               </li>
-
-              {/* <li>
-                <Link
-                  className="text-gray-500 transition hover:text-violet-600"
-                  to="/category/tv/1"
-                >
-                  Séries
-                </Link>
-              </li> */}
-              {/* <li>
-                <NavLink
-                className="text-gray-500 transition hover:text-violet-600"
-                onClick={() => {
-                  changeEnglish();
-                }}
-                >
-                EN
-                </NavLink>
-                </li>
-                <li>
-                <button
-                className="text-gray-500 transition hover:text-violet-600"
-                onClick={() => {
-                  changePortuguese();
-                }}
-                >
-                  PT
-                </button>
-                </li>
-                <li>
-                <button
-                  className="text-gray-500 transition hover:text-violet-600"
-                  onClick={() => {
-                    changeSpanish();
-                  }}
-                  >
-                  ES
-                  </button>
-                </li> */}
             </ul>
           </nav>
 

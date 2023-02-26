@@ -10,7 +10,7 @@ export function MoviePage() {
   const params = useParams();
   const [movie, setMovie] = useState({});
   const [similarMovies, setSimilarMovies] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+
   const [load1, setLoad1] = useState(false);
   const [load2, setLoad2] = useState(false);
   const languageSelect = useLanguage((state) => state.language);

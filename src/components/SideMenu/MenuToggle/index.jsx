@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function MenuToggle() {
+export function MenuToggle() {
   const languageSelect = useLanguage((state) => state.language);
   const changeEnglish = useLanguage((state) => state.english);
   const changePortuguese = useLanguage((state) => state.portuguese);
