@@ -38,28 +38,16 @@ export function CategoryPage() {
           className="pt-20"
         >
           <div className="bg-zinc-800">
-            {params.category === "tv" && (
-              <div className=" ">
-                <div className={style.containerSeries}>
-                  {series.map((currentElement) => {
-                    return (
-                      <BoxSerie
-                        key={currentElement.id}
-                        id={currentElement.id}
-                        backdrop_path={currentElement.backdrop_path}
-                        name={currentElement.name}
-                        vote_average={currentElement.vote_average}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            )}
             {params.category === "movie" && (
               <div className="">
                 <div className={style.containerSeries}>
                   {series.map((currentElement) => {
-                    return <BoxMovie movie={currentElement} />;
+                    return (
+                      <BoxMovie
+                        movie={currentElement}
+                        key={currentElement.id}
+                      />
+                    );
                   })}
                 </div>
                 <Pagination

@@ -40,7 +40,7 @@ export function SearchBar() {
       <div className="flex flex-col fixed  mx-auto right-28 sm:right-40 md:right-96 top-1 w-36 sm:w-60 z-10">
         <div className="w-36 sm:w-44 absolute">
           <label
-            HTMLfor="searchBar"
+            htmlFor="searchBar"
             className="relative block overflow-hidden border-b border-gray-200 pt-3 focus-within:border-violet-600"
           >
             <input
